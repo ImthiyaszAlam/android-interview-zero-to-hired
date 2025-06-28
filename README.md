@@ -62,8 +62,6 @@ This repo is built from those conversations — not theory, not ChatGPT fluff.
 
 ---
 
----
-
 ##  Want the Full Guide?
 
 ✅ 50+ Questions  
