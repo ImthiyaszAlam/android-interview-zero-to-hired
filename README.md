@@ -2,17 +2,29 @@
 
 # Android Interview: Zero to Hired
 
-A brutally practical guide to **crack Android interviews at top product-based companies** — with **real-world questions**, **simplified answers**, and **step-by-step explanations**.
 
-✅ Written in simple Indian English  
-✅ Real questions from companies like Meesho, Swiggy, Flipkart, Dream11, and more  
-✅ Designed for Android devs who want to **level up, not memorize**
+> 💼 Real Questions. 🐛 Real Bugs. 🛠️ Real Fixes.
+> 🚫 No Bakchodi. No Theory. No Udemy Slides.
 
 ---
 
-## 📘 What You’ll Get
+##  Why This Exists
 
-| 🔍 Section | 📌 What’s Inside |
+I’m not a FAANG dev. I don’t work at Google.
+I’m an Android engineer from a startup — just like you.
+
+But over the last year, I’ve spoken to **300+ Android developers** from top product-based companies like **Swiggy, Flipkart, Meesho, Dream11, Zomato** and more.
+
+I collected their **real interview experiences**, the **exact questions** they were asked, the **mistakes** they made, and the **answers** that helped them get hired.
+
+This repo is built from those conversations — not theory, not ChatGPT fluff.
+
+---
+
+
+##  What You’ll Get
+
+|  Section |  What’s Inside |
 |------------|------------------|
 | ✅ Real Interview Questions | From real interviews at product-based companies |
 | ✅ Super Simplified Answers | Beginner-friendly explanations (in plain Indian English) |
@@ -50,39 +62,23 @@ A brutally practical guide to **crack Android interviews at top product-based co
 
 ---
 
-## 📂 Folder Structure
-
-```
-
-📁 android-interview-zero-to-hired
-├── questions/
-│   ├── viewmodel-vs-activityscope.md
-│   ├── recyclerview-optimization.md
-│   ├── memory-leak-fixes.md
-│   └── ...more coming weekly
-├── cheat-sheets/
-│   ├── lifecycles.md
-│   ├── coroutine-scopes.md
-├── mock-interviews/
-│   └── flipkart-sample-round.md
-└── README.md
-
-```
-
 ---
 
-## 📥 Want the Full Guide?
+##  Want the Full Guide?
 
 ✅ 50+ Questions  
 ✅ PDF Format  
 ✅ Bonus: Resume Tips + Project Ideas  
 ✅ Lifetime Access + Free Updates
 
+
+* 📄 [Demo Questions (5)](./demo/) – Free sample with spicy Q\&A
 👉 [Get the Full PDF (Coming Soon)](https://medium.com/@developerimthiyas)  
 👉 [Follow on Medium](https://medium.com/@developerimthiyas)  
 👉 [Connect on LinkedIn](https://www.linkedin.com/in/imthiyasalam)
+* 🔗 [30 Problems Every Android Dev Makes (Viral Post)](https://www.linkedin.com/posts/imthiyasalam_youre-not-an-android-developer-youre-a-activity-7336731115451232258-qT_R?
+* 
 
----
 
 ## 🤝 Support This Project
 
@@ -94,23 +90,8 @@ If this repo helped you:
 
 ---
 
-## 📣 Updates & Community
 
-Join our Android prep circle!  
-More questions will be added every week.
-
----
-
-## 🛠 Built With
-
-- Kotlin & Jetpack
-- Jetpack Compose & XML
-- MVVM, Clean Architecture
-- Real-world bugs, ANRs, memory leaks
-
----
-
-## 📢 Coming Soon
+##  Coming Soon
 
 - Android DSA + System Design Q&A  
 - Mock interview videos  
@@ -118,8 +99,15 @@ More questions will be added every week.
 
 ---
 
+
+
+##  Want to Contribute?
+
+- Did you face a weird bug in an interview?
+- Have a real Q\&A from your company?
+- Submit an issue or PR — let’s help devs level up *together*.
+
+
+---
+
 **Stop copying code. Start thinking like an Android engineer.**
-
-From Zero → Hired 💼
-```
-
