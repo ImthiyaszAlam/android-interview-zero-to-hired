@@ -6,15 +6,14 @@
 
 ---
 
-##  Why This Exists
-> I’m not a FAANG dev. I don’t work at Google.
-> I’m an Android engineer from a startup — just like you.
->
-> But over the last year, I’ve spoken to **300+ Android developers** from top product-based companies like **Swiggy, Flipkart, Meesho, Dream11, Zomato**, and more.
->
-> I collected their **real interview experiences**, the **exact questions** they were asked, the **mistakes** they made, and the **answers** that helped them get hired.
->
-> 📁 This repo is built from those conversations — **not theory, not ChatGPT fluff**. Only real-world, battle-tested prep that works.
+
+## 📌 Why This Exists
+
+I’m not a FAANG dev, and I don’t work at Google. I’m an Android engineer from a small startup — just like you. But over the last year, I’ve personally spoken to over **300 Android developers** from top product-based companies like **Swiggy, Flipkart, Meesho, Dream11, Zomato**, and more. I asked them about their real interview experiences — the **actual questions** they were asked, the **mistakes** they made, and the **answers** that helped them crack those roles.
+
+This repo is a result of those raw, honest conversations — not recycled theory, not generic ChatGPT fluff. Just **real-world, battle-tested interview prep** that will get you hired.
+
+
 
 ---
 
@@ -33,7 +32,7 @@
 
 ---
 
-## 🏢 Companies Covered
+## Companies Covered
 
 - Flipkart  
 - Meesho  
@@ -66,15 +65,15 @@
 ✅ Bonus: Resume Tips + Project Ideas  
 ✅ Lifetime Access + Free Updates
 
-👉  [Demo Questions (5)](./demo/) – Free sample with spicy Q\&A
-👉 [Get the Full PDF (Coming Soon)](https://medium.com/@developerimthiyas)  
+- [Demo Questions (5)](./demo/) – Free sample with spicy Q\&A
+- [Get the Full PDF (Coming Soon)](https://medium.com/@developerimthiyas)  
 
 ---
 
 
-## 🤝 Support This Project
-⭐ Star this repo  
-🔁 Share with friends preparing for Android interviews  
+## Support This Project
+- Star this repo  
+- Share with friends preparing for Android interviews  
 
 ---
 
@@ -87,10 +86,9 @@
 ---
  ##  Stay Connected & Explore More
 
- 👉 [Follow on Medium](https://medium.com/@developerimthiyas)  
-👉 [Connect on LinkedIn](https://www.linkedin.com/in/imthiyasalam)  
-👉 [🔗 30 Problems Every Android Dev Makes (Viral LinkedIn Post)](https://www.linkedin.com/posts/imthiyasalam_youre-not-an-android-developer-youre-a-activity-7336731115451232258-qT_R)
-
+- [Follow on Medium](https://medium.com/@developerimthiyas)  
+- [Connect on LinkedIn](https://www.linkedin.com/in/imthiyasalam)  
+- [🔗 30 Problems Every Android Dev Makes (Viral LinkedIn Post)](https://www.linkedin.com/posts/imthiyasalam_youre-not-an-android-developer-youre-a-activity-7336731115451232258-qT_R)
 
 ----
 
