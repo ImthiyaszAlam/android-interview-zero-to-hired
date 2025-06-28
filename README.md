@@ -3,21 +3,20 @@
 # Android Interview: Zero to Hired
 
 
-> 💼 Real Questions. 🐛 Real Bugs. 🛠️ Real Fixes.
-> 🚫 No Bakchodi. No Theory. No Udemy Slides.
+-  Real Questions.  Real Bugs.  Real Fixes.
+-  No Theory. No Udemy Slides.
 
 ---
 
 ##  Why This Exists
-
-I’m not a FAANG dev. I don’t work at Google.
-I’m an Android engineer from a startup — just like you.
-
-But over the last year, I’ve spoken to **300+ Android developers** from top product-based companies like **Swiggy, Flipkart, Meesho, Dream11, Zomato** and more.
-
-I collected their **real interview experiences**, the **exact questions** they were asked, the **mistakes** they made, and the **answers** that helped them get hired.
-
-This repo is built from those conversations — not theory, not ChatGPT fluff.
+> I’m not a FAANG dev. I don’t work at Google.
+> I’m an Android engineer from a startup — just like you.
+>
+> But over the last year, I’ve spoken to **300+ Android developers** from top product-based companies like **Swiggy, Flipkart, Meesho, Dream11, Zomato**, and more.
+>
+> I collected their **real interview experiences**, the **exact questions** they were asked, the **mistakes** they made, and the **answers** that helped them get hired.
+>
+> 📁 This repo is built from those conversations — **not theory, not ChatGPT fluff**. Only real-world, battle-tested prep that works.
 
 ---
 
