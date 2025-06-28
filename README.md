@@ -68,22 +68,30 @@
 
 👉  [Demo Questions (5)](./demo/) – Free sample with spicy Q\&A
 👉 [Get the Full PDF (Coming Soon)](https://medium.com/@developerimthiyas)  
-👉 [Follow on Medium](https://medium.com/@developerimthiyas)  
-👉 [Connect on LinkedIn](https://www.linkedin.com/in/imthiyasalam)
-👉 🔗 [30 Problems Every Android Dev Makes (Viral Post)](https://www.linkedin.com/posts/imthiyasalam_youre-not-an-android-developer-youre-a-activity-7336731115451232258-qT_R?
+
+---
 
 
 ## 🤝 Support This Project
 ⭐ Star this repo  
 🔁 Share with friends preparing for Android interviews  
+
 ---
+
 ##  Want to Contribute?
 
 - Did you face a weird bug in an interview?
 - Have a real Q\&A from your company?
 - Submit an issue or PR — let’s help devs level up *together*.
 
-
 ---
+ ##  Stay Connected & Explore More
+
+ 👉 [Follow on Medium](https://medium.com/@developerimthiyas)  
+👉 [Connect on LinkedIn](https://www.linkedin.com/in/imthiyasalam)  
+👉 [🔗 30 Problems Every Android Dev Makes (Viral LinkedIn Post)](https://www.linkedin.com/posts/imthiyasalam_youre-not-an-android-developer-youre-a-activity-7336731115451232258-qT_R)
+
+
+----
 
 **Stop copying code. Start thinking like an Android engineer.**
