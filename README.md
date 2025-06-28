@@ -1,5 +1,3 @@
-
-
 # Android Interview: Zero to Hired
 
 
@@ -68,36 +66,17 @@
 ✅ Bonus: Resume Tips + Project Ideas  
 ✅ Lifetime Access + Free Updates
 
-
-* 📄 [Demo Questions (5)](./demo/) – Free sample with spicy Q\&A
+👉  [Demo Questions (5)](./demo/) – Free sample with spicy Q\&A
 👉 [Get the Full PDF (Coming Soon)](https://medium.com/@developerimthiyas)  
 👉 [Follow on Medium](https://medium.com/@developerimthiyas)  
 👉 [Connect on LinkedIn](https://www.linkedin.com/in/imthiyasalam)
-* 🔗 [30 Problems Every Android Dev Makes (Viral Post)](https://www.linkedin.com/posts/imthiyasalam_youre-not-an-android-developer-youre-a-activity-7336731115451232258-qT_R?
-* 
+👉 🔗 [30 Problems Every Android Dev Makes (Viral Post)](https://www.linkedin.com/posts/imthiyasalam_youre-not-an-android-developer-youre-a-activity-7336731115451232258-qT_R?
 
 
 ## 🤝 Support This Project
-
-If this repo helped you:
-
 ⭐ Star this repo  
 🔁 Share with friends preparing for Android interviews  
-🗣️ Drop your question suggestions in [Discussions](https://github.com/YOUR_USERNAME/android-interview-zero-to-hired/discussions)
-
 ---
-
-
-##  Coming Soon
-
-- Android DSA + System Design Q&A  
-- Mock interview videos  
-- Live walkthroughs & Telegram group access  
-
----
-
-
-
 ##  Want to Contribute?
 
 - Did you face a weird bug in an interview?
