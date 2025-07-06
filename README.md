@@ -7,11 +7,11 @@
 ---
 
 
-## 📌 Why This Exists
+# 📌 Why This Exists
 
-I’m not a FAANG dev, and I don’t work at Google. I’m an Android engineer from a small startup — just like you. But over the last year, I’ve personally spoken to over **300 Android developers** from top product-based companies like **Swiggy, Flipkart, Meesho, Dream11, Zomato**, and more. I asked them about their real interview experiences — the **actual questions** they were asked, the **mistakes** they made, and the **answers** that helped them crack those roles.
-
-This repo is a result of those raw, honest conversations — not recycled theory, not generic ChatGPT fluff. Just **real-world, battle-tested interview prep** that will get you hired.
+* I personally spoke to **300+ Android developers on LinkedIn** — from companies like Flipkart, Swiggy, Dream11, and more.
+* They shared the **exact interview questions, mistakes, and winning answers** that helped them get hired.
+* This guide is built from those **real conversations** — not theory, not fluff. Just what actually works.
 
 
 
@@ -60,7 +60,7 @@ This repo is a result of those raw, honest conversations — not recycled theory
 
 ##  Want the Full Guide?
 
-✅ 50+ Questions  
+✅ 100+ Questions  
 ✅ PDF Format  
 ✅ Bonus: Resume Tips + Project Ideas  
 ✅ Lifetime Access + Free Updates
