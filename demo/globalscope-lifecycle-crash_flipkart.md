@@ -1,16 +1,19 @@
-🧠 **Topic:**
-Why using `GlobalScope` in Android is dangerous, and what to use instead.
 
-🏢 **Asked in:**
-**Flipkart**
+# Interview Question  
+**Why using `GlobalScope` in Android is dangerous, and what to use instead**
+
+**Company:** Flipkart  
+**Role:** Android Developer  
+**Experience:** 1.5+ years
 
 ---
 
-## 🧩 Real Story from a Feature I Built
+## Real Story from a Feature I Built
 
-**Project:** Product listing screen with “Add to Cart” API in a shopping app.
-**Team Pressure:** Deadline in 2 days.
-**What I did (mistake):**
+**Project:** Product listing screen with “Add to Cart” API in a shopping app  
+**Context:** Deadline in 2 days. Quick implementation needed.
+
+### What I did (mistake):
 
 ```kotlin
 fun addToCart(productId: String) {
@@ -19,28 +22,28 @@ fun addToCart(productId: String) {
         updateCartUI(response)
     }
 }
-```
+````
 
-It worked. The feature was live. Happy release.
+It worked. The feature was live. The release went through.
 
-**Then the bugs started.**
+**Then the bugs started:**
 
-* App crashed when user left the screen quickly after clicking “Add to Cart.”
-* Logs showed: `NullPointerException` in `updateCartUI()`.
-* QA said: “Sometimes cart doesn’t update.”
-
----
-
-## 🧠 What Went Wrong?
-
-* I used **GlobalScope**, which **ignores lifecycle**.
-* Even after user left the screen, the coroutine continued.
-* It tried to update the UI of a screen that was already destroyed.
-* Boom. **Crash.**
+* App crashed when user left the screen quickly after clicking “Add to Cart”
+* Stacktrace showed: `NullPointerException` in `updateCartUI()`
+* QA reported: “Sometimes cart doesn’t update”
 
 ---
 
-## 🛠️ Refactored Fix – Using viewModelScope
+## What Went Wrong
+
+* GlobalScope ignores the Android lifecycle
+* Coroutine continued even after the user navigated away
+* It tried to update a destroyed screen → crash
+* Uncancelled work = memory leaks + wasted resources
+
+---
+
+## Refactored Fix – Using `viewModelScope`
 
 ```kotlin
 fun addToCart(productId: String) {
@@ -51,70 +54,73 @@ fun addToCart(productId: String) {
 }
 ```
 
-> Now if the user navigates away, coroutine auto-cancels.
-> No crash. No leak. Smooth UI.
+Now, if the user leaves the screen:
+
+* Coroutine is cancelled automatically
+* UI is never updated from a dead screen
+* App remains smooth and crash-free
 
 ---
 
-## 🧠 What I Learned
+## What I Learned
 
-* **GlobalScope is not for UI logic. Ever.**
-* It lives until the app dies. That's dangerous for Android lifecycles.
-* Always tie coroutines to lifecycle-aware scopes like:
+* GlobalScope is not safe for UI logic
+* It lives as long as the app — not tied to screen lifecycle
+* Always use lifecycle-aware scopes:
 
-  * `viewModelScope` (in ViewModel)
-  * `lifecycleScope` (in Activity/Fragment)
-
----
-
-## 🎯 How to Say It in Interview
-
-> “In my early projects, I made the mistake of using `GlobalScope` for API calls. It caused crashes when screens were closed too fast.
->
-> Now I use `viewModelScope` or `lifecycleScope`, so coroutines are cancelled automatically when the screen is destroyed — preventing leaks and crashes. This follows structured concurrency in Android.”
+  * `viewModelScope` for ViewModel
+  * `lifecycleScope` for Activity/Fragment
 
 ---
 
-## 🧪 Real Bugs You’ll Face If You Don’t Learn This
+## How to Say It in Interview
 
-* `View is detached from window` crash when updating UI from dead coroutine
-* API call continues even when the user navigates away
-* Memory leak from long-running background jobs
+“In my earlier projects, I used `GlobalScope` to launch API calls. But that caused crashes when users left the screen early.
 
----
-
-## 🔥 Red Flag Phrases in Interview
-
-> ❌ “I use GlobalScope because it’s global.”
-> ❌ “It worked fine in my test device.”
-> ❌ “I don’t think scopes matter much.”
+Now I tie every coroutine to `viewModelScope` or `lifecycleScope`. This ensures structured concurrency — coroutines cancel automatically if the UI is gone. It prevents leaks, crashes, and aligns with Android’s lifecycle.”
 
 ---
 
-## ✅ Words That Impress Interviewers
+## Where This Goes Wrong in Real Projects
 
-> ✅ “Structured concurrency”
-> ✅ “Tied to lifecycle”
-> ✅ “Cancels automatically”
-> ✅ “Avoiding leaks and wasted processing”
-
----
-
-## 📌 Quick Cheatsheet
-
-| Scope          | Lifecycle-aware? | Use-case                           |
-| -------------- | ---------------- | ---------------------------------- |
-| GlobalScope    | ❌ No             | Only for app-wide tasks (rare)     |
-| viewModelScope | ✅ Yes            | API calls, DB ops in ViewModel     |
-| lifecycleScope | ✅ Yes            | UI-bound work in Activity/Fragment |
+* Crashes with `View is detached from window` error
+* API call continues when user is on a different screen
+* Memory leak from jobs that never got cancelled
 
 ---
 
-## ⏩ TL;DR – 1-Min Summary
+## Red Flag Phrases in Interview
 
-* GlobalScope is not lifecycle-aware → can cause crashes or leaks.
-* Always use `viewModelScope` or `lifecycleScope` for safe coroutines.
-* Learn structured concurrency — interviewers love that phrase.
-* If your coroutine touches UI, it **must** die with the screen.
+* “I use GlobalScope because it’s global”
+* “It works fine on my device”
+* “I don’t think lifecycle scope matters much”
 
-ld I keep using **Project Diary**, or mix with another format (like Checklist or Mindmap)?
+---
+
+## Phrases That Impress Interviewers
+
+* “Structured concurrency”
+* “Scoped to lifecycle”
+* “Automatic cancellation”
+* “Leak prevention through scoped coroutines”
+
+---
+
+## Quick Cheatsheet
+
+| Scope          | Lifecycle-aware | When to Use                          |
+| -------------- | --------------- | ------------------------------------ |
+| GlobalScope    | No              | Rare app-wide tasks only             |
+| viewModelScope | Yes             | ViewModel API/DB tasks               |
+| lifecycleScope | Yes             | UI-related work in Activity/Fragment |
+
+---
+
+## TL;DR – 1-Min Summary
+
+* GlobalScope ignores lifecycle → leads to crashes
+* Always prefer `viewModelScope` or `lifecycleScope`
+* Use structured concurrency to match Android lifecycle
+* Coroutines touching UI must die with the screen
+
+
