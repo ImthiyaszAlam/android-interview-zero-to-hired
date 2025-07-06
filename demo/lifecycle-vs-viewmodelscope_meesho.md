@@ -1,65 +1,70 @@
-# 🧠 Interview Question
 
+# Interview Question  
 **What's the difference between `lifecycleScope` and `viewModelScope`? When should you use each?**
 
-🏢 **Asked in:** Meesho (SDE-1 Android Round)
+**Company:** Meesho  
+**Role:** SDE-1 Android  
+**Experience:** 1.5 years  
 
 ---
 
-## 🧩 Simplified Answer
+## Simplified Answer
 
-`lifecycleScope` is tied to the screen (Activity or Fragment).
+`lifecycleScope` is tied to the screen (Activity or Fragment).  
 `viewModelScope` is tied to the ViewModel.
 
-Use `lifecycleScope` when the logic should stop when the screen is destroyed.
-Use `viewModelScope` when the logic should continue as long as the ViewModel lives (even during config changes).
+Use `lifecycleScope` when the logic should stop when the screen is destroyed.  
+Use `viewModelScope` when the logic should continue as long as the ViewModel lives — even during configuration changes like rotation.
 
 ---
 
-## 📚 Explain Like I'm 5
+## Explain Like I'm 5
 
-* **ViewModel** = A class that holds UI data.
-* **Scope** = The lifecycle of a coroutine (how long it should run).
-* **lifecycleScope** = Dies when Activity/Fragment is destroyed.
-* **viewModelScope** = Dies only when ViewModel is cleared.
-
----
-
-## 🚫 Common Mistake by Candidates
-
-“Both are used for launching coroutines. I just use `lifecycleScope` everywhere.”
-
-✅ Interviewer immediately knows: you don’t understand the **scope** lifecycle, and your app might be leaking memory or cancelling things too early.
+- **ViewModel** = A class that holds UI data across screen changes  
+- **Scope** = The lifecycle of a coroutine (how long it should run)  
+- **lifecycleScope** = Cancels when screen is destroyed  
+- **viewModelScope** = Cancels only when ViewModel is cleared  
 
 ---
 
-## ✅ How to Answer in Interview
+## Common Mistake by Candidates
 
-"`lifecycleScope` is tied to the UI lifecycle — so I use it when the task is UI-specific and should stop if the user leaves the screen.
+> “Both are used for launching coroutines. I just use `lifecycleScope` everywhere.”
 
-`viewModelScope` survives config changes like screen rotation. So I use it for long-running tasks like fetching data or storing state.
+That shows you don’t understand the real purpose of scopes. It could lead to:
 
-This helps avoid memory leaks and ensures my coroutines live as long as they should — no more, no less."
+- Memory leaks  
+- Cancelled tasks during screen rotation  
+- UI bugs and crashes  
 
 ---
 
-## 🛠️ Before vs After (Code Example)
+## How to Answer in Interview
 
-### ❌ Wrong:
+"`lifecycleScope` is tied to the UI lifecycle, so I use it for UI-specific tasks like animations or button clicks.  
+`viewModelScope` survives screen rotations, so I use it for data loading or tasks that shouldn't restart unnecessarily.  
+This keeps my app efficient, lifecycle-aware, and crash-free."
+
+---
+
+## Before vs After – Code Example
+
+### Incorrect
 
 ```kotlin
 class MyActivity : AppCompatActivity() {
     override fun onCreate(...) {
         lifecycleScope.launch {
-            fetchUserProfile() // long task
+            fetchUserProfile() // long-running task
         }
     }
 }
-```
+````
 
-* 🔴 Problem: If user rotates the screen, Activity dies → task is cancelled.
+* Problem: Activity dies on rotation → task is cancelled
+* UI might not update or will show empty state
 
-### ✅ Right:
+### Correct
 
 ```kotlin
 class MyViewModel : ViewModel() {
@@ -73,63 +78,56 @@ class MyViewModel : ViewModel() {
 
 ---
 
-## 🧪 Where This Goes Wrong in Real Projects
+## Where This Goes Wrong in Real Projects
 
-A dev loads important data using `lifecycleScope` inside an Activity.
-The user rotates the phone.
+A developer loads data using `lifecycleScope` inside Activity.
+User rotates screen → Activity restarts → coroutine cancels → no data shown.
 
-The data loading cancels.
-The new screen shows **blank UI** or inconsistent state.
-
-The fix? Move that logic to `viewModelScope`.
+Fix: Move data fetch to ViewModel using `viewModelScope`. Let ViewModel handle state. UI observes it.
 
 ---
 
-## 💣 Red Flag Words to Avoid
+## Red Flag Words to Avoid
 
-* “I use lifecycleScope for everything.”
-* “They are basically the same.”
-
----
-
-## 🎯 Pro Tip
-
-**Don’t access UI elements from `viewModelScope`!**
-It has no reference to Activity or Fragment.
-Do the data work → then update UI via LiveData or StateFlow.
+* “I use lifecycleScope everywhere.”
+* “They are kind of the same.”
+* “I haven’t faced issues with GlobalScope.”
 
 ---
 
-## 📌 Mini Cheatsheet
+## Pro Tip
 
-| Situation                           | Use This       |
-| ----------------------------------- | -------------- |
-| Update UI                           | lifecycleScope |
-| Fetch data / business logic         | viewModelScope |
-| Need to survive rotation            | viewModelScope |
-| Short-lived job (like button click) | lifecycleScope |
+Never update UI directly from `viewModelScope`.
+It has no reference to screen context.
+Use LiveData or StateFlow to push updates back to UI safely.
 
 ---
 
-## 🔍 If You Don't Know This in Interview
+## Cheatsheet – When to Use Which Scope
 
-Say:
-
-> "I usually use both depending on context, but I’d love to explain my understanding and get feedback if I’m wrong."
-
-This shows coachability and honesty, which is better than bluffing.
-
----
-
-## ⏩ TL;DR – 1-Min Summary
-
-* `lifecycleScope`: dies with screen
-* `viewModelScope`: survives screen rotation, tied to ViewModel
-* Use `lifecycleScope` for UI tasks, `viewModelScope` for logic/data
-* Misusing scopes can cancel important tasks or cause memory leaks
+| Situation                          | Use This       |
+| ---------------------------------- | -------------- |
+| Update UI                          | lifecycleScope |
+| Fetch data / business logic        | viewModelScope |
+| Survive rotation / config change   | viewModelScope |
+| Short-lived task (like button tap) | lifecycleScope |
 
 ---
 
-📘 Want 49 more interview questions like this?
-📥 [Follow me on Medium](https://medium.com/@developerimthiyas)
-🤝 [Connect on LinkedIn](https://www.linkedin.com/in/imthiyasalam)
+## If You Don't Know This in Interview
+
+Say this instead of bluffing:
+
+> “I usually decide based on the task lifecycle, but would love your input if I’m off. I’m actively learning best practices.”
+
+That shows honesty and coachability.
+
+---
+
+## TL;DR – 1-Min Summary
+
+* `lifecycleScope`: tied to screen lifecycle — use for UI updates
+* `viewModelScope`: tied to ViewModel — use for long-running or data logic
+* Picking the wrong scope causes either leaks or cancelled tasks
+* Don’t update UI from `viewModelScope` — use LiveData/StateFlow
+
