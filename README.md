@@ -10,7 +10,7 @@
 # 📌 Why This Exists
 
 * I personally spoke to **300+ Android developers on LinkedIn** — from companies like Flipkart, Swiggy, Dream11, and more.
-* They shared the **exact interview questions, mistakes, and winning answers** that helped them land ₹10–45 LPA+ roles..
+* They shared the **exact interview questions, mistakes, and winning answers** that helped them land ₹9–45 LPA+ roles..
 * This guide is built from those **real conversations** — not theory, not fluff. Just what actually works.
 
 
