@@ -2,7 +2,7 @@
 
 - **Real Questions. Real Bugs. Real Fixes.**  
 - **No Theory. No Udemy Slides. No Copy-Paste.**  
-- **Just raw truths from ₹10–45 LPA Android interviews.**
+- **Just raw truths from ₹9–45 LPA Android interviews.**
 
 ---
 
