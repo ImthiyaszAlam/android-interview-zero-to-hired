@@ -32,22 +32,24 @@
 
 ---
 
-## Companies Covered
+##  Companies Covered
 
-- Flipkart  
-- Meesho  
-- Swiggy  
-- Razorpay  
-- Dream11  
-- Paytm  
-- CRED  
-- PhonePe  
-- Zomato  
-- Gojek  
+| Product-Based Companies | Startups & Unicorns |
+|-------------------------|---------------------|
+| Flipkart                | Apna                |
+| Meesho                  | Slice               |
+| Swiggy                  | NoBroker            |
+| Razorpay                | ShareChat           |
+| Dream11                 | Ola                 |
+| Paytm                   | Groww               |
+| CRED                    | CoinDCX             |
+| PhonePe                 | CureFit             |
+| Zomato                  | Juspay              |
+| Gojek                   | Zepto               |
 
-*(and more coming...)*
+> *More being added regularly...*
 
----
+
 
 ##  Who Should Use This?
 
